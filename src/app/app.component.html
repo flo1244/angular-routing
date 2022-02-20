@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+        <!-- We are adding the paths in the links so we can route to that page. Instead of href we use special directive routerLink ***routerlink catches the click element prevents the default doesnt restart our app. -->
+        <!-- Can use relative path here -->
+        <!-- routerLinkActive allows us to style the link dynamically.  **Home is always selected active to fix this we use routerLinkOptions with [] {} for property binding so now it will only stay selected when page is on that path.-->
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+     <!-- We add special selector here marks the place in our document to tell angular which route to use.  -->
+     <router-outlet></router-outlet>
+      <!-- <app-home></app-home> -->
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-users></app-users>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-servers></app-servers>
+    </div>
+  </div> -->
+</div>
